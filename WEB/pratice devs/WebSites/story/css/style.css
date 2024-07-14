@@ -1,0 +1,244 @@
+:root {
+    --primary-color: #fffffff9;
+    --secondary-color: #2b2b2b;
+    --tertiary-color: #0000003f;
+}
+.dark-theme {
+    --primary-color: #373737f7;
+    --secondary-color: #ffffff;
+    --tertiary-color: #fcfcfc;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--primary-color);
+}
+/* Header Styles */
+header {
+    background-color: var(--primary-color);
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    margin-left: 30px; /* Adjust margin as needed */
+}
+
+.logo a {
+    font-size: 28px;
+    font-weight: bold;
+    font-family: "Bebas Neue", "Oswald", sans-serif;
+    border-bottom: 3px solid var(--secondary-color);
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+/* Search Styles */
+.search-container {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.search-input {
+    width: auto;
+    color: var(--secondary-color);
+    background: transparent;
+    font-family: inherit;
+    font-size: 22px;
+    border: none;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: var(--secondary-color);
+}
+
+.search-btn {
+    width: 30px;
+    padding: 4px 10px 4px 20px;
+    background: transparent;
+    border: none;
+    border-left: 1px solid var(--tertiary-color);
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.search-btn i {
+    scale: 1.2;
+    color: var(--secondary-color);
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Adjust gap between links as needed */
+}
+
+nav a {
+    font-size: 25px;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: bold;
+    position: relative; /* Position for the pseudo-element */
+    top: 7px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff9800; /* Hover color */
+}
+
+nav a:before {
+    content: "";
+    position: absolute;
+    bottom: -3px; /* Adjust position of the Line */
+    left: 0;
+    width: 100%;
+    height: 2px; /*Height of the underline */
+    background-color: #ff9800; /* Color of the underline */
+    transform: scaleX(0); /* Initial scale of the right */
+    transform-origin: right; /* Expand from the right */
+    transition: transform 0.3s ease-in-out;
+}
+
+nav a:hover::before {
+    transform: scaleX(1); /* Expand the line to full width */
+    transform-origin: left; /* Expand from the left */
+}
+
+/* PWA Install button */
+#install-button {
+    display: none;
+    background-color: #ff9800;
+    color: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Arial", sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#install-button:hover {
+    background-color: #e65100;
+}
+
+/* Dark / Light Mode */
+#modeIcon {
+    width: 50px;
+    cursor: pointer;
+    position: relative;
+    right: 2%;
+}
+
+.menu {
+    display: none;
+}
+
+/* Diary List Section */
+.diary {
+    width: 100%;
+    display: flex;
+    padding: 25px;
+    background: #1f545e;
+}
+
+.diary-list {
+    width: calc(100% - 40%);
+}
+.first {
+    height:15%;
+    margin-bottom: 25px;
+    border-radius: 0 40px;
+    background: #94ecfc;
+}
+
+.datemood {
+    height: calc(100% / 3);
+    width: 100%;
+    padding: 2%;
+    border-radius: 0 40px 0 0;
+    background: #95cbed;
+    display: flex;
+    justify-content:space-between;
+}
+.date, .mood {
+    width: 120px;
+    height: 28px;
+    font-size: 24px;
+    font-weight: bold;
+    border: 2px solid red;
+}
+
+.title {
+    height: calc(100% / 3);
+    width: 100%;
+    padding: 2%;
+    background: #75c4f5;
+}
+
+.firstline {
+    height: calc(100% / 3);
+    width: 100%;
+    padding: 2%;
+    border-radius: 0 0 0 40px;
+    background: #5ab5ee;
+}
+
+.details {
+    width: calc(100% - 60%);
+    height: 40vh;
+    margin-left: 25px;
+    border-radius: 40px;
+    background: #2ebfd2;
+}
+
+
+
+@media (max-width: 1024px)  {
+    .logo a, .search-input, img#modeIcon{
+        width: 22px;
+        font-size: 12px;
+    }
+
+    .search-input {
+        width: 150px;
+    }
+    .search-container{
+        padding: 1px 10px;
+    }
+
+    nav {
+        display: none;
+    }
+    /* .menu {
+        display: block;
+    } */
+
+    .diary-list{
+        width: 100%;
+    }
+
+    .details {
+        display: none;
+    }
+}

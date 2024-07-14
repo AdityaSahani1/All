@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> DigitalLearnLabHQ </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+<!-- and it's easy to individually load additional languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/go.min.js"></script>
+
+<script>hljs.highlightAll();</script>
+
+<link rel="stylesheet" href="CodeBlockCopyTry.css">
+</head>
+<body>
+    <div class="code-container">
+        <div class="code">
+            <div class="code-header">
+                <button class="copy-button" onclick="copyCode()">Copy</button>
+                <a href="/DigitalLearnLabHQ/editor/Public/XML Editor/index.html" class="tryCode"><button class="run-code" onclick="runCode()">Try Code</button></a>
+            </div>
+
+<pre><code class="python">
+    # Your Python code here
+    def hello():
+        print("Hello")
+    hello()
+</code></pre>
+
+    </div>
+    <div class="explanation">
+        <p>explanation!</p>
+    </div>
+</div>
+
+
+<script>
+    // Copy button
+    function copyCode() {
+        // Get the code element cotaining your code
+        const codeElement = document.querySelector('.code code');
+
+        // Create a temporary textarea element to hold the code text
+        const textArea = document.createElement('textarea');
+        textArea.value = codeElement.textContent;
+
+        // Append the textarea to the document
+        document.body.appendChild(textArea);
+
+        // Select the text inside the textarea
+        textArea.select();
+
+        try {
+            // Execute the copy command
+            document.execCommand('copy');
+        } catch (err) {
+            console.error('Unable to copy code: ', err);
+        } finally {
+            //Remove the temporary textarea
+            document.body.removeChild(textArea);
+        }
+    }
+
+
+    // Running program
+    function runCode() {
+        // First Copy code and Then move to the run code page
+        // Get the code element cotaining your code
+        const codeElement = document.querySelector('.code code');
+
+        // Create a temporary textarea element to hold the code text
+        const textArea = document.createElement('textarea');
+        textArea.value = codeElement.textContent;
+
+        // Append the textarea to the document
+        document.body.appendChild(textArea);
+
+        // Select the text inside the textarea
+        textArea.select();
+
+        try {
+            // Execute the copy command
+            document.execCommand('copy');
+        } catch (err) {
+            console.error('Unable to copy code: ', err);
+        } finally {
+            //Remove the temporary textarea
+            document.body.removeChild(textArea);
+        }
+    }
+
+</script>
+
+</body>
+</html>

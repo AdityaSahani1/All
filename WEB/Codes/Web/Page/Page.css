@@ -1,0 +1,64 @@
+:root {
+    --primary-color: #ededede0;
+    --secondary-color: #2b2b2b;
+    --tertiary-color: #000000c7;
+}
+.dark-theme {
+    --primary-color: #373737f7;
+    --secondary-color: #ffffff;
+    --tertiary-color: #fcfcfc;
+}
+
+/* Temporary Style for Scripts */
+.scripts-container {
+    width: 100%;
+}
+.script-box {
+    width: 60%;
+    position: absolute;
+    top: 50%;
+    background: #000;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px;
+    background: var(--primary-color);
+}
+.scripts {
+    height: 7vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    background: #febbbb;
+}
+.scripts a.title {
+    font-size: 23px;
+    color: #000;
+    overflow: hidden;
+    width: 66%;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    top: 3px;
+}
+.scripts button {
+    padding: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 12px;
+    background-color: var(--primary-color);
+}
+
+/* Dark / Light Mode */
+#modeIcon {
+    width: 25px;
+    cursor: pointer;
+    position: relative;
+    right: 2%;
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Toggle</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        body.dark-mode {
+            background-color: black;
+            color: white;
+        }
+
+        .toggle {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 5px;
+        width: 300px;
+        margin: 0 auto;
+    }
+    .square {
+        width: 100px;
+        height: 100px;
+        background-color: lightgray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: lightblue;
+        border: none;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <h1>Dark Mode Toggle</h1>
+    <label class="toggle">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider"></span>
+    </label>
+
+
+<div class="container" id="tic-tac-toe">
+    <div class="square" onclick="placeMarker(0)"></div>
+    <div class="square" onclick="placeMarker(1)"></div>
+    <div class="square" onclick="placeMarker(2)"></div>
+    <div class="square" onclick="placeMarker(3)"></div>
+    <div class="square" onclick="placeMarker(4)"></div>
+    <div class="square" onclick="placeMarker(5)"></div>
+    <div class="square" onclick="placeMarker(6)"></div>
+    <div class="square" onclick="placeMarker(7)"></div>
+    <div class="square" onclick="placeMarker(8)"></div>
+</div>
+<button onclick="resetGame()">Reset Game</button>
+
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+
+        darkModeToggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+        
+        
+    let currentPlayer = 'X';
+    let board = ['', '', '', '', '', '', '', '', ''];
+    const winningCombos = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],
+        [0, 3, 6], [1, 4, 7], [2, 5, 8],
+        [0, 4, 8], [2, 4, 6]
+    ];
+
+    function placeMarker(index) {
+        if (board[index] === '' && !checkWinner()) {
+            board[index] = currentPlayer;
+            document.getElementsByClassName('square')[index].innerText = currentPlayer;
+            if (checkWinner()) {
+                alert(currentPlayer + ' wins!');
+            } else {
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            }
+        }
+    }
+
+    function checkWinner() {
+        for (let combo of winningCombos) {
+            if (board[combo[0]] !== '' && board[combo[0]] === board[combo[1]] && board[combo[1]] === board[combo[2]]) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function resetGame() {
+        board = ['', '', '', '', '', '', '', '', ''];
+        currentPlayer = 'X';
+        document.querySelectorAll('.square').forEach(square => square.innerText = '');
+    }
+    </script>
+</body>
+</html>

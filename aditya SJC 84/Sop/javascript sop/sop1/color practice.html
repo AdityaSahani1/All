@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <style>
+            #c1, #c2, #c3{
+                height: 200px;
+                width: 200px;
+                background-color: aqua;
+                border-radius: 10px 10px 10px 10px;
+                margin: 20px;
+                margin-left: 50%;
+                margin-top: 35px;
+            }
+        </style>
+    </head>
+    
+    <script language="javascript">
+        function f1()
+        {
+            document.getElementById('c1').innerHTML.bgColor="red";
+            window.setTimeout("f2()",1200);
+        }
+        function f2()
+        {
+            document.bgColor="green";
+            window.setTimeout("f3()",1200);
+        }
+        function f3()
+        {
+            document.bgColor="pink";
+            window.setTimeout("f4()",1200);
+        }
+        function f4()
+        {
+            document.bgColor="aqua";
+            window.setTimeout("f5()",1200);
+        }
+        function f5()
+        {
+            document.bgColor="orange";
+            window.setTimeout("f6()",1200);
+        }
+        function f6()
+        {
+            document.bgColor="purple";
+            window.setTimeout("f7()",1200);
+        }
+        function f7()
+        {
+            document.bgColor="yellow";
+            window.setTimeout("f1()",1200);
+        }
+        function exit()
+        {
+            alert("The Color Page closed by user");
+            window.close();
+        }
+    </script>
+    <body bgcolor="aquamarine">
+        <div id="c1" onmouseover="f1()" onmouseleave="exit()">
+
+        </div>
+        <div id="c1" onmouseover="f1()" onmouseleave="exit()">
+
+        </div>
+        <div id="c1" onmouseover="f1()" onmouseleave="exit()">
+
+        </div>
+    </body>
+</html>

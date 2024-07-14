@@ -1,0 +1,12 @@
+{
+    "files.autoSave": "afterDelay",
+    "editor.tabSize": 4,
+    "editor.hover.delay": 100,
+    "editor.hover.hidingDelay": 100,
+    "files.autoSaveDelay": 10,
+    "workbench.hover.delay": 50,
+    "testing.autoRun.delay": 100,
+    "java.dependency.refreshDelay": 200,
+    "CodeGPT.apiKey": "CodeGPT Plus Beta",
+    "git.ignoreLimitWarning": true
+}

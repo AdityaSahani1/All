@@ -1,0 +1,55 @@
+<html>
+    <body bgcolor="cyan">
+        <style>
+            input{
+                margin: 2px;
+            }
+        </style>
+        <script language="javascript">
+            function grade()
+            {
+                var avg,grade,m1,m2,m3,m4,m5,m6,total;
+                m1=parseInt(f1.t1.value);
+                m2=parseInt(f1.t2.value);
+                m3=parseInt(f1.t3.value);
+                m4=parseInt(f1.t4.value);
+                m5=parseInt(f1.t5.value);
+                m6=parseInt(f1.t6.value);
+                total=m1+m2+m3+m4+m5+m6;
+                alert("Total Score is "+total);
+                avg=total/6;
+                avg=Math.floor(avg);
+                alert("The Average is "+avg);
+                if(avg>=91 && avg<=100)
+                {
+                    alert("A grade");
+                }
+                else if(avg>=81 && avg<=90)
+                {
+                    alert("B Grade");
+                }
+                else if(avg>=71 && avg<=80)
+                {
+                    alert("C Grade");
+                }
+                else if(avg>=61 && avg<=70)
+                {
+                    alert("D Grade");
+                }
+                else{
+                    alert("F Grade");
+                }
+            }
+        </script>
+        <form name="f1">
+            <h1> Students MarkSheet</h1>
+            Enter Subject1 Marks: <input type="number" name="t1"><br>
+            Enter Subject2 Marks: <input type="number" name="t2"><br>
+            Enter Subject3 Marks: <input type="number" name="t3"><br>
+            Enter Subject4 Marks: <input type="number" name="t4"><br>
+            Enter Subject5 Marks: <input type="number" name="t5"><br>
+            Enter Subject6 Marks: <input type="number" name="t6"><br>
+            <input type="button" value="calculate grade" onClick="grade()">
+        </form>
+    </body>
+</html>

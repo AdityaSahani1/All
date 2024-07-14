@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Site Description">
+        <meta name="Author" content="Otaku #name">
+        <title> story </title>
+    
+        <!-- Including Meta tags for PWA -->
+        <link rel="manifest" href="/pwa/manifest.json">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+        <!-- (B) ICONS & PLATFORM SPECIFIC -->
+        <!-- (B1) GOOD OLD FAVICON -->
+        <link rel="icon" href="/pwa/icon/logo.png" type="image/png">
+    
+        <!-- (B2) ANDROID/CHROME -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="white">
+    
+        <!-- (B3) IOS APP ICON + MOBILE SAFARI -->
+        <link rel="apple-touch-icon" href="/pwa/icon/logo.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Hello World">
+    
+        <!-- (B4) WINDOWS -->
+        <meta name="msapplication-TileImage" content="/pwa/icon/logo.jpg">
+        <meta name="msapplication-TileColor" content="#ffffff">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@200..700&display=swap" rel="stylesheet">
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <a href="/profile card/index.html">
+            DEAR DIARY
+            </a>
+        </div>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+           </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#premium">Premium</a></li>
+            </ul>
+        </nav>
+        <button id="install-button">Install App</button>
+        <img src="/images/night.png" id="modeIcon">
+
+        <div class="menu">
+            <i class="fas fa-bars"></i>
+            <!-- <i class="fas fa-times"></i> -->
+        </div>
+    </header>
+
+
+    <div class="diary">
+        <div class="header">
+            <div class="date"> <span>04</span> May 2024</div>
+            <div class="mood">&#x1F60A</div>
+        </div>
+        <div class="scroll">
+            <div class="title">Maya's struggle...</div>
+            <div class="script"> 
+                <p>
+                    "Dear Diary, <br><br>
+                    Today, I felt the weight of the world on my shoulders, and the burden of my own emotions
+                    crushing my spirit. It seems like life has become a constant struggle, a never-ending battle. I'm at
+                    a point where every step feels like I'm trudging through quicksand. <br><br>
+                    Growing up, I always felt like an outsider in this vast sea of people. I longed for acceptance, for a
+                    genuine connection with others. But somehow, I could never quite fit in. Society's expectations
+                    and standards seemed like an impenetrable fortress that I couldn't break through. <br><br>
+                    College was supposed to be my time to discover myself, to pursue my dreams. But as the days
+                    passed, I realized that it wasn't the paradise I had envisioned. I was drowning in a sea of
+                    expectations, my own and those placed upon me by others. It felt like everyone else had it all
+                    figured out while I was lost in the depths of my own mind. <br><br>
+                    Each day, the darkness grew deeper, encapsulating my soul. Depression became my unwanted
+                    companion. I wore a mask, smiling on the outside but dying a little on the inside. I tried to reach
+                    out, to share my pain, but felt silenced by the fear of judgment and rejection. <br><br>
+                    In my darkest moments, I found solace in art. With a paintbrush in my hand, I could release the
+                    kaleidoscope of emotions swirling within me. Each stroke of color represented a fragment of my
+                    fractured heart. It was a temporary escape, a way to express the anguish that words failed to
+                    convey. <br><br>
+                    But salvation came to me in an unexpected form - a friend named Alex. They saw through my
+                    facade, piercing through the layers of sadness to reach the person I truly was. Alex became the
+                    anchor, the one who held on to me even when I wanted to let go. <br><br>
+                    Together, we embarked on a journey towards healing. Alex introduced me to therapy, a lifeline
+                    that helped me untangle the mess of emotions that had consumed me for far too long. I realized
+                    that seeking help wasn't a sign of weakness, but an act of courage. <br><br>
+                    As I shared my story with others, I discovered that I wasn't alone. There were countless voices
+                    echoing the same pain, the same struggles. Slowly, we formed a support system, a network of
+                    individuals bound by their shared experiences. <br><br>
+                    Through our collective strength, we challenged the stigma surrounding mental health. We raised
+                    our voices, advocating for change, hoping to create a world where no one felt the need to hide
+                    their battles. We became warriors, armed with empathy, compassion, and the courage to face
+                    our own demons. <br><br>
+                    Dear Diary, my story is still unfolding, and I'm learning to embrace the ups and downs with open
+                    arms. The road ahead might be filled with obstacles, but I know that within me lies an
+                    indomitable spirit. I will continue to fight, not just for myself, but for all those who find solace in
+                    my words. <br><br>
+                    With love,<br>
+                    Sara"
+                </p>
+
+                <a href="/index.html"><button class="back">Home</button></a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Dark / Light Mode
+var modeIcon = document.getElementById("modeIcon");
+
+modeIcon.onclick = function() {
+    document.body.classList.toggle("dark-theme");
+    if(document.body.classList.contains("dark-theme")){
+        modeIcon.src = "day.png";
+    }
+    else{
+        modeIcon.src = "night.png";
+    }
+}
+
+    </script>
+    <script src="/pwa/installButton.js"></script>
+    <script src="/pwa/service-worker.js"></script>
+</body>
+</html>
