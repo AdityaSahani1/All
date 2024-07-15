@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Site Description">
+        <meta name="Author" content="Otaku #name">
+        <title> story </title>
+    
+        <!-- Including Meta tags for PWA -->
+        <link rel="manifest" href="/pwa/manifest.json">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+        <!-- (B) ICONS & PLATFORM SPECIFIC -->
+        <!-- (B1) GOOD OLD FAVICON -->
+        <link rel="icon" href="/pwa/icon/logo.png" type="image/png">
+    
+        <!-- (B2) ANDROID/CHROME -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="white">
+    
+        <!-- (B3) IOS APP ICON + MOBILE SAFARI -->
+        <link rel="apple-touch-icon" href="/pwa/icon/logo.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Hello World">
+    
+        <!-- (B4) WINDOWS -->
+        <meta name="msapplication-TileImage" content="/pwa/icon/logo.jpg">
+        <meta name="msapplication-TileColor" content="#ffffff">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@200..700&display=swap" rel="stylesheet">
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <a href="/profile card/index.html">
+            DEAR DIARY
+            </a>
+        </div>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+           </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#premium">Premium</a></li>
+            </ul>
+        </nav>
+        <button id="install-button">Install App</button>
+        <img src="/images/night.png" id="modeIcon">
+
+        <div class="menu">
+            <i class="fas fa-bars"></i>
+            <!-- <i class="fas fa-times"></i> -->
+        </div>
+    </header>
+
+
+    <div class="diary">
+        <div class="header">
+            <div class="date"> <span>05</span> May 2024</div>
+            <div class="mood">&#x1F60A</div>
+        </div>
+        <div class="scroll">
+            <div class="title">I made a decision...</div>
+            <div class="script"> 
+                <p>
+                    Dear Diary, <br><br>
+                    There's a girl, me, Anisha. I live in a small town where everyone thinks they know everything about
+                    each other. But no one really knows what's going on behind my smile. <br><br>
+                    My life isn't what it seems. It all started when I was just a kid. I saw something terrible,
+                    something that took my parents away from me. Those memories haunt me like a shadow,
+                    darkening every corner of my mind. <br><br>
+                    After the accident, I went to live with my aunt and uncle. They tried their best, but nothing could
+                    fill the emptiness inside me. At school, I was an outcast. Bullied for being different, for carrying a weight that no one else could see. <br><br>
+                    Days turned into weeks, and weeks turned into months, but the sadness never left me. It was like a heavy fog, suffocating and relentless. I felt like I was drowning in a sea of sorrow, with no one to throw me a lifeline. <br><br>
+                    But amidst the darkness, there was one glimmer of hope. My best friend, Meena. She was always
+                    there for me, a ray of sunshine in my stormy world. She made me laugh when all I wanted to do
+                    was cry, and she held me close when the pain became too much to bear. <br><br>
+                    And then came that night. The night I lost her too. A drunk driver, a split-second decision, and she was gone. Just like that, my world shattered into a million pieces. <br><br>
+                    Alone in my room, I poured out all my pain onto a piece of paper, a letter to Sarah that would
+                    never reach her. Then I found myself on that bridge, overlooking the river. <br><br>
+                    The wind whipped at my hair, and the cold bit at my skin, but I hardly noticed. With tears
+                    streaming down my face, I closed my eyes and took a deep breath. In that moment, I made my
+                    choice. <br><br>
+                    As the world around me faded into darkness, I finally found the peace I had been searching for.
+                    But for those left behind, my absence was a wound that would never fully heal. <br><br>
+                    And in the end, as I let go of everything, I whispered her name into the wind, hoping that
+                    somehow, someway, she would hear me. <br><br>
+                    Forever in my heart, <br>
+                    Anisha, 
+                </p>
+
+                <a href="/index.html"><button class="back">Home</button></a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Dark / Light Mode
+var modeIcon = document.getElementById("modeIcon");
+
+modeIcon.onclick = function() {
+    document.body.classList.toggle("dark-theme");
+    if(document.body.classList.contains("dark-theme")){
+        modeIcon.src = "day.png";
+    }
+    else{
+        modeIcon.src = "night.png";
+    }
+}
+
+    </script>
+    <script src="/pwa/installButton.js"></script>
+    <script src="/pwa/service-worker.js"></script>
+</body>
+</html>

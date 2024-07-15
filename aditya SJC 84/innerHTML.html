@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>>
+    <title>Document</title>
+    <script language="javascript">
+        function changeText3()
+        {
+            var style="<h2 style='color:green'>";
+                var text="Welcome to the HTML5 and Javascript";
+                var closestyle="</h2>";
+                document.getElementById('para').innerHTML= style+text+closestyle;
+        }
+    </script>
+</head>
+<body style="background-color:cyan">
+    <h1 align="center">
+        <p id="para">Welcome to the Site</p>
+        <input type="button" value="Click this button to change above text" onclick="changeText3()">
+
+    </h1>
+</body>
+</html>

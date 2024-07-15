@@ -1,0 +1,95 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="/editor/Public/XML Editor/style.css">
+  <!-- Include CodeMirror styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css">
+  <!-- Include CodeMirror JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+  <!-- Include CodeMirror JavaScript modes (e.g., JavaScript, Python, HTML) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/htmlmixed/htmlmixed.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/css/css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/JavaScript/JavaScript.min.js"></script>
+
+  <!-- Include CodeMirror JavaScript add-ons for run and copy buttons -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/runmode/runmode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/edit/closebrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/edit/matchbrackets.min.js"></script>
+</head>
+
+<body>
+  <div class="code-container">
+    <div class="code">
+      <div class="code-header">
+        <!-- Copy button -->
+        <button class="copy-button" onclick="copyCode()">Copy</button>
+        <!-- Run button -->
+        <button class="run-code" id="runButton">Run</button>
+      </div>
+
+      <!-- Code input area -->
+      <textarea id="code" rows="10" cols="50">
+  // Your code here
+      </textarea>
+    </div>
+    <!-- Output area -->
+    <div class="output">
+      <b>Output: -</b>
+      <pre id="output"></pre>
+    </div>
+  </div>
+
+  <!-- JavaScript to handle running and copying code -->
+  <script>
+    const codeEditor = CodeMirror.fromTextArea(document.getElementById("code"), {
+      lineNumbers: true,
+      mode: "htmlmixed",
+      autoCloseBrackets: true,
+      matchBrackets: true,
+    });
+
+    const runButton = document.getElementById("runButton");
+    const outputArea = document.getElementById("output");
+
+    // Run button click event
+    runButton.addEventListener("click", () => {
+      try {
+        const code = codeEditor.getValue();
+        // Execute the code using eval
+        const result = eval(code);
+        outputArea.textContent = result;
+      } catch (error) {
+        outputArea.textContent = "Error: " + error.message;
+      }
+    });
+
+    // Copy button
+    function copyCode() {
+      // Get the code element cotaining your code
+      const codeElement = document.getElementById('code');
+
+      // Create a temporary textarea element to hold the code text
+      const textArea = document.createElement('textarea');
+      textArea.value = codeEditor.getValue();
+
+      // Append the textarea to the document
+      document.body.appendChild(textArea);
+
+      // Select the text inside the textarea
+      textArea.select();
+
+      try {
+        // Execute the copy command
+        document.execCommand('copy');
+      } catch (err) {
+        console.error('Unable to copy code: ', err);
+      } finally {
+        //Remove the temporary textarea
+        document.body.removeChild(textArea);
+      }
+    }
+
+  </script>
+</body>
+
+</html>

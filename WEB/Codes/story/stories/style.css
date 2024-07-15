@@ -1,0 +1,75 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.diary {
+    width: 50%;
+    height: 85vh;
+    margin-left: 25%;
+    margin-top: 1.5%;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #febbbb94;
+    border: 2px solid #f86a6a;
+    border-radius: 23px;
+}
+
+.header {
+    background: #febbbb;
+    display: flex;
+    padding: 10px 20px;
+    border-radius: 10px 24px 24px 5px;
+    justify-content: space-between;
+}
+.date {
+    font-weight: bold;
+}
+.date span {
+    font-size: 24px;
+}
+.mood {
+    font-size: 24px;
+}
+
+.scroll {
+    height: 93%;
+    margin-top: 5px;
+    overflow: scroll;
+    scrollbar-width: none;
+    border-radius: 0 10px 25px 25px;
+    background: #febbbb;
+    font-family: "Bebas Neue", "Oswald";
+}
+.title {
+    background: #ffadad;
+    padding: 10px;
+    font-size: 20px;
+}
+.script {
+    padding: 20px;
+    letter-spacing: 1px;
+}
+.script .back {
+    padding: 6px;
+    width: 80px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50px;
+    color: var(--secondary-color);
+    background: #fd9393;
+    font-weight: bold;
+    position: relative;
+    top: 80%;
+    left: 73%;
+}
+
+
+@media (max-width: 1024px)  {
+    .diary {
+        width: 90%;
+        margin-left: 5%;
+    }
+}

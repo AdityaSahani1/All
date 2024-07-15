@@ -1,0 +1,97 @@
+<!DOCTYPE html>	
+<html>	
+<head>	
+   <style type="text/css">	
+   body{
+   box-sizing: border-box;
+   font-family:arial;
+   margin: 0;
+   padding: 0;
+   min-height: 100vh;
+   display: flex;
+   align-items:center;
+   justify-content:center;
+   background: #0b1522;
+   }
+   h2
+   {
+   position: absolute;
+   letter-spacing:1px;
+   color:#0e3742;
+   text-transform: uppercase;
+   width:100%;
+   text-align:center;
+   -webkit-box-reflect:below 1px linear-gradient(transparent, #0004);
+   line-hieght:0.70em;
+   outline:none;
+   animation:animate 2s linear infinite;
+   }
+   @keyframes animate
+   {
+   0% 
+   {color:#0e3742;
+   text-shadow:none
+   transform:rotate(360deg)scale(1.4);
+   transform: rotate(360deg)scale(5.1);
+   transform: rotate(360deg)scale(0.9);
+   transform: rotate(360deg)scale(1.7);
+   transform: rotate(360deg)scale(2.4);
+   }
+   100%
+   {color:#fff;
+   text-shadow:0 0 10px #03bcf4;
+   }
+   } 
+   .heart{
+   height: 140px;
+   width: 140px;
+   background: #f20044;
+   position: absolute;
+   transform: rotate(-45deg);
+   box-shadow: 10x 10x 90px #dc143c;
+   animation: heart 0.6s linear infinite;
+   }
+   @keyframes heart{	
+   0%{	
+   transform: rotate(-45deg)scale(1.09);
+   }	
+   80%{	
+   transform: rotate(-45deg)scale(1.0);
+   }
+   100%{
+   transform: rotate(-45deg)scale(0.5);
+   }
+   }
+   .heart:before{	
+   content: '';	
+   position: absolute;	
+   height: 140px;
+   width: 140px;
+   background: #f20044;
+   top:-50%;
+   border-radius: 100px; 
+   box-shadow: 10px 10px 90px #dc143c;
+   }	
+   .heart:after{	
+   content: '';	
+   position: absolute;	
+   height: 140px;
+   width: 140px;
+   background: #f20044;
+   right:	-50%;
+   border-radius: 100px; 
+   box-shadow: 10px 10px 90px #dc143c;
+   }	
+   </style>	
+   <script type="text/javascript">	
+   
+   </script>
+   </head>	
+   <body>	
+   <div class="heart"></div>
+   <div class="heart1"></div>
+   <div	class="heart2"></div>	
+   <div class="heart3"></div>
+   <h2 contenteditable="true"></h2>
+   </body>	
+   </html>

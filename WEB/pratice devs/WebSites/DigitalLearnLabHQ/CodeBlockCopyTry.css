@@ -1,0 +1,74 @@
+/* Style the container */
+.code-container {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Style the code block on the left */
+.code {
+    flex: 1;
+    background-color: #f0f0f0;
+    border-radius: 10px 0 0 10px;
+    overflow: auto;
+    position: relative;
+}
+
+/* Styles for the code header */
+.code-header {
+    display:flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: rgb(227, 227, 227);
+}
+
+/* Style the code block itself for font size */
+.code code {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Styles the explanation on the right */
+.explanation {
+    flex: 1;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 0 10px 10px 0;
+}
+
+/* Styles for the copy button */
+.copy-button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+/* Styles for the Run button */
+.run-code {
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Add hover effect for the copy button and run button */
+.copy-button:hover {
+    background-color: #0056b3;
+}
+
+.run-code:hover {
+    background-color: #bdb8b8;
+}
+
+.tryCode:hover {
+    color: #000000;
+}

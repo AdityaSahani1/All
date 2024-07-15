@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html><head>
+
+<title>use of array methods</title>
+
+</head>
+
+<body style="color:blue;
+background-color:pink;
+font-size:30px">
+ <script language="javascript">
+
+var city = ['Pune', 'Kolhapur', 'Mumbai', 'Nashik', 'Latur', 'Nagpur']; 
+document.write("Original array elements are <br>");
+ document.write(city);
+
+document.write("<br><br>Copy elements at end to the beginning <br>");
+ document.write(city.copyWithin(0, 3));
+
+city = ['Pune', 'Kolhapur', 'Mumbai', 'Nashik', 'Latur', 'Nagpur'];
+ document.write("<br><br>Copy elements at the beginning to the end<br>");
+
+document.write(city.copyWithin(3,0));
+ city = ['Pune', 'Kolhapur', 'Mumbai', 'Nashik', 'Latur', 'Nagpur'];
+
+document.write("<br><br>Copy first 3 elements to middle<br>");
+
+document.write(city.copyWithin(2, 0, 3)); 
+city=['Pune', 'Kolhapur', 'Mumbai', 'Nashik', 'Latur', 'Nagpur'];
+
+document.write("<br><br>Adding an element to an array<br>");
+ document.write(city.push('Kokan'));
+
+document.write(city);
+
+document.write("<br><br>Reversing an array element <br>");
+
+document.write(city.reverse());
+ </script>
+ </body>
+ </html>

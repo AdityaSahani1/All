@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 1rem;
+  height: 60px;
+}
+
+.navbar-brand,
+.hamburger-menu,
+.navbar-menu {
+  align-items: center;
+}
+
+.navbar-logo {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  margin-right: 10px;
+}
+
+.bar-title {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.hamburger-menu, .hamburger-menu .bar {
+  display: none;
+}
+
+.navbar-menu {
+  display: flex;
+}
+
+.navbar-item {
+  color: #fff;
+  padding: 0 1rem;
+  text-decoration: none;
+}
+
+.navbar-login {
+  margin-left: auto;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.navbar-signup {
+  margin-left: 1rem;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.navbar-login:hover,
+.navbar-signup:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block;
+    cursor: pointer;
+    height: 20px;
+    width: 30px;
+  }
+
+  .hamburger-menu .bar {
+    display: block;
+    margin-bottom: 3px;
+    background: #ffffff;
+    border-radius: 2px;
+    height: calc(20px /4);
+    width: 30px;
+  }
+
+  .navbar-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    flex-direction: column;
+  }
+
+  .navbar-item {
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .navbar-login, .navbar-signup {
+    margin-left: 0;
+    margin-bottom: 10px;
+    padding: 0.5rem 1rem;
+    width: 90px;
+  }
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+          <span class="navbarlogo"></span>
+          <span class="bar-title">My Navbar</span>
+        </div>
+        <div class="hamburger-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <div class="navbar-menu">
+          <a href="#" class="navbar-item">Home</a>
+          <a href="#" class="navbar-item">About</a>
+          <a href="#" class="navbar-item">Services</a>
+          <a href="#" class="navbar-item">Contact</a>
+          <a href="#" class="navbar-item navbar-login">Login</a>
+          <a href="#" class="navbar-item navbar-signup">Sign Up</a>
+        </div>
+      </nav>
+
+      <script>
+        document.querySelector('.hamburger-menu').addEventListener('click', function() {
+  document.querySelector('.navbar-menu').classList.toggle('active');
+});
+      </script>
+</body>
+</html>
