@@ -1,0 +1,199 @@
+/**************************************
+*	Global Layout
+**************************************/
+
+/**************************************
+*	Defaults
+*/
+* {
+	margin: 0;
+	padding: 0;
+	}
+div,ul,ol,li,p {
+	overflow: hidden;
+	}
+h1 {
+	float: left;
+	}
+ol li,
+ul li {
+	float: left;
+	}
+a:focus {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    }
+/**************************************
+*	Wrapper Defaults
+*/
+#container,
+#category-container,
+#checkout-container {
+	width: 948px;
+	margin: 12px auto 14px;
+	padding: 16px;
+	z-index: 0;
+	}
+#nav-wrapper {
+	clear: both;
+	}
+#header #navigation { 
+	width: 948px; 
+	height: 41px;
+	}
+#footer {
+	width: 948px;
+	padding: 0 16px;
+	margin: 0 auto 15px;
+	}
+#shopping {
+	float: right;
+	}
+#shipping {
+	float: left;
+	}
+#gifts {
+	float: right;
+	}
+#brands {
+	float: left;
+	width: 545px;
+	}
+#email-list {
+	float: left;
+	width: 545px;
+	}
+#spotlight {
+	float: right;
+	width: 385px;
+	}
+/**************************************
+*	Content Columns
+*/
+#body .section {
+	float: left;
+	}
+	.third-width {}
+		.third-width .left-column {
+			width: 33% !important;
+			}
+		.third-width .right-column {
+			width: 67% !important;
+			}
+	.fifty-fifty {}
+		.fifty-fifty .left-column {
+			width:515px;
+			float:left;
+		}
+		.fifty-fifty .right-column {
+			width:414px;
+			padding-left:12px;
+			float:left;
+		}
+	.left-width {}
+		.left-width .left-column {
+			width: 670px;
+			padding-right: 8px;
+			}
+		.left-width .right-column {
+			width: 262px !important;
+			padding-left: 8px;
+			}
+    .left-cart-width {}
+		.left-cart-width .left-column {
+			width: 763px;
+			padding-right: 8px;
+			}
+		.left-cart-width .right-column {
+			width: 262px !important;
+			padding-left: 8px;
+			}
+    .left-review-width {}
+		.left-review-width .left-column {
+			width: 760px;
+			padding-right: 8px;
+			}
+		.left-review-width .right-column {
+			width: 172px !important;
+			padding-left: 7px;
+			}
+	.right-width {}
+		.right-width .left-column {
+			width: 270px !important;
+			}
+		.right-width .right-column {
+			width: 678px !important;
+			}
+	#womens .right-column {
+		width:701px !important;
+	}
+	#category-container .right-width {}
+		#category-container .right-width .left-column {
+			width: 224px !important;
+			}
+		#category-container .right-width .right-column {
+			width:724px !important;
+            text-align:right;
+			}
+    .subcategory .right-width {}
+        .subcategory .right-width .left-column {
+			width: 230px !important;
+			}
+		.subcategory .right-width .right-column {
+			width: 718px !important;
+			}
+	.center-width {}
+		.center-width .left-column {
+			width: 30% !important;
+			}
+		.center-width .center-column {
+			width: 50% !important;
+			}
+		.center-width .right-column {
+			width: 20% !important;
+			}
+    .split-width {}
+		.split-width .left-column {
+			width: 30.25% !important;
+			}
+		.split-width .center-column {
+			width: 30.25% !important;
+			}
+		.split-width .right-column {
+			width: 38.5% !important;
+			}
+    .full-width {}
+		.full-width .left-column {
+			width: 670px !important;
+            margin: 0 auto;
+			}
+/**************************************
+*	Utilities
+*/
+.clear:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    }
+.clear {display: inline-block;}
+.left {
+	float: left;
+	}
+.right {
+	float: right;
+	}
+
+.clearfix:after {
+content:".";
+display:block;
+height:0;
+clear:both;
+visibility:hidden;
+}
+.clearfix {display:inline-block;}
+/* Hide from IE Mac \*/
+.clearfix {display:block;}
+/* End hide from IE Mac */

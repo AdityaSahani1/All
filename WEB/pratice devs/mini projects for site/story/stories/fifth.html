@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Site Description">
+        <meta name="Author" content="Otaku #name">
+        <title> story </title>
+    
+        <!-- Including Meta tags for PWA -->
+        <link rel="manifest" href="/pwa/manifest.json">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+        <!-- (B) ICONS & PLATFORM SPECIFIC -->
+        <!-- (B1) GOOD OLD FAVICON -->
+        <link rel="icon" href="/pwa/icon/logo.png" type="image/png">
+    
+        <!-- (B2) ANDROID/CHROME -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="white">
+    
+        <!-- (B3) IOS APP ICON + MOBILE SAFARI -->
+        <link rel="apple-touch-icon" href="/pwa/icon/logo.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Hello World">
+    
+        <!-- (B4) WINDOWS -->
+        <meta name="msapplication-TileImage" content="/pwa/icon/logo.jpg">
+        <meta name="msapplication-TileColor" content="#ffffff">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@200..700&display=swap" rel="stylesheet">
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <a href="/profile card/index.html">
+            DEAR DIARY
+            </a>
+        </div>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+           </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#premium">Premium</a></li>
+            </ul>
+        </nav>
+        <button id="install-button">Install App</button>
+        <img src="/images/night.png" id="modeIcon">
+
+        <div class="menu">
+            <i class="fas fa-bars"></i>
+            <!-- <i class="fas fa-times"></i> -->
+        </div>
+    </header>
+
+
+    <div class="diary">
+        <div class="header">
+            <div class="date"> <span>05</span> May 2024</div>
+            <div class="mood">&#x1F60A</div>
+        </div>
+        <div class="scroll">
+            <div class="title">Meri Dost Shanaya...</div>
+            <div class="script"> 
+                <p>
+                    Dear Diary <br><br>
+                    Today, let me introduce you to a vibrant soul named Shanaya. She is like a burst of sunshine,
+                    spreading warmth and joy wherever she goes. Shanaya is a young girl with a heart full of dreams
+                    and a spirit as free as a bird. <br><br>
+                    Her laughter is contagious, and her smile can light up even the darkest room. Shanaya has a zest
+                    for life that is truly infectious. She loves to dance like nobody's watching, expressing herself
+                    through graceful movements and rhythmic beats. <br><br>
+                    A true dreamer, Shanaya has a passion for art and creativity. She spends hours lost in the world
+                    of paintbrushes and canvases, bringing her imagination to life. With every stroke, she pours her
+                    heart and soul onto the canvas, creating masterpieces that evoke emotions and inspire others.  <br><br>
+                    Shanaya's kindness knows no bounds. She has a heart as big as the universe and is always there
+                    to lend a helping hand. Whether it's comforting a friend in need or standing up for what's right,
+                    Shanaya is a beacon of compassion and empathy. <br><br>
+                    Her love for adventure is unmatched. Shanaya is always seeking new experiences, whether it's
+                    traveling to far-off destinations or trying out a new thrilling activity. She believes that life is
+                    meant to be lived to the fullest, and she embraces every opportunity that comes her way. <br><br>
+                    But, like everyone else, Shanaya has her moments of vulnerability. She has faced her fair share of
+                    challenges, heartbreak, and setbacks. However, she never lets them define her. Instead, she uses
+                    those experiences as stepping stones for growth, learning, and becoming a stronger version of
+                    herself. <br><br>
+                    In matters of the heart, Shanaya is a true romantic. She believes in the power of love and
+                    cherishes the connections she forms with others. Her heart craves genuine and deep connections,
+                    and she values loyalty, trust, and honesty above all else. <br><br>
+                    Shanaya's dreams are as vast as the ocean and reach for the stars. She aspires to make a positive
+                    difference in the world, leaving a lasting impact through her creativity and compassion. She
+                    knows that the journey may not always be easy, but she faces it with unwavering determination
+                    and a radiant smile. <br><br>
+                    Dear Diary, Shanaya is a force to be reckoned with, a beautiful soul shining brightly in this world.
+                    She reminds us all to embrace our passions, spread kindness, and cherish the magic of life. May
+                    her story inspire us to live with passion, love, and a zest for life. <br><br>
+                    With admiration, <br>
+                    Adi
+                </p>
+
+                <a href="/index.html"><button class="back">Home</button></a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Dark / Light Mode
+var modeIcon = document.getElementById("modeIcon");
+
+modeIcon.onclick = function() {
+    document.body.classList.toggle("dark-theme");
+    if(document.body.classList.contains("dark-theme")){
+        modeIcon.src = "day.png";
+    }
+    else{
+        modeIcon.src = "night.png";
+    }
+}
+
+    </script>
+    <script src="/pwa/installButton.js"></script>
+    <script src="/pwa/service-worker.js"></script>
+</body>
+</html>

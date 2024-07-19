@@ -1,0 +1,30 @@
+
+/*  =Modal Pages
+-------------------------------------------------------------- */
+.stsbody {
+background:#F5F5F5 none repeat scroll 0 0;
+	font-family:Arial;
+	font-size:97%;
+	margin:0;
+	padding:0;
+	}
+.stsbody .modal { 
+	padding: 10px;
+	
+	}
+
+    .modal p { margin: 15px 0;color:#555555;}
+	.modal h1 {font-size: 24px; font-weight:bold;}
+    .modal .buttonWrap { margin-left: 0;}
+    
+    .modal a.stay {
+        margin: 8px 0 0 25px;
+        display: inline;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: underline;
+        color:#F79237;
+    }
+    .fltlft {
+float:left;
+}

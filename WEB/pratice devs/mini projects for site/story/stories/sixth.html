@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Site Description">
+        <meta name="Author" content="Otaku #name">
+        <title> story </title>
+    
+        <!-- Including Meta tags for PWA -->
+        <link rel="manifest" href="/pwa/manifest.json">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+        <!-- (B) ICONS & PLATFORM SPECIFIC -->
+        <!-- (B1) GOOD OLD FAVICON -->
+        <link rel="icon" href="/pwa/icon/logo.png" type="image/png">
+    
+        <!-- (B2) ANDROID/CHROME -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="white">
+    
+        <!-- (B3) IOS APP ICON + MOBILE SAFARI -->
+        <link rel="apple-touch-icon" href="/pwa/icon/logo.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Hello World">
+    
+        <!-- (B4) WINDOWS -->
+        <meta name="msapplication-TileImage" content="/pwa/icon/logo.jpg">
+        <meta name="msapplication-TileColor" content="#ffffff">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@200..700&display=swap" rel="stylesheet">
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <a href="/profile card/index.html">
+            DEAR DIARY
+            </a>
+        </div>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+           </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#premium">Premium</a></li>
+            </ul>
+        </nav>
+        <button id="install-button">Install App</button>
+        <img src="/images/night.png" id="modeIcon">
+
+        <div class="menu">
+            <i class="fas fa-bars"></i>
+            <!-- <i class="fas fa-times"></i> -->
+        </div>
+    </header>
+
+
+    <div class="diary">
+        <div class="header">
+            <div class="date"> <span>05</span> May 2024</div>
+            <div class="mood">&#x1F60A</div>
+        </div>
+        <div class="scroll">
+            <div class="title">Mother Cara...</div>
+            <div class="script"> 
+                <p>
+                    Cara was a single mother of three kids. They all lived in a one bedroom apartment in the dirtiest
+                    neighborhood in the city. Cara had been fired from her job last month, rent was almost due, her
+                    kids were all starving, and she didn't have medical for them when they got sick. <br><br>
+                    She had to steal from farmers markets, sell herself, and beg. When her rent was due. She only
+                    had $10 left to go. She tried to tell the landlord she only needed $10 more dollars. But he was
+                    mean. He loved seeing people sad. He threw Cara and her kids out onto the streets. <br><br>
+                    Everyday she walked alleyway to alleyway with her kids. Racing to homeless shelters. Most of the
+                    time she was too late, so they had to sleep on the wet, cold, ground for three months. She stole
+                    food and went hungry for weeks. She just wanted to keep her kids safe. <br><br>
+                    One day her oldest son Henry broke out with a cold. She barely had any money. She tried to get
+                    him some over the counter medicine, but she was always short. It turned out Henry had caught
+                    the Swine Flu. He died the next week. <br><br>
+                    Cara wanted to just give up. She wanted to cry so bad, but still she stood strong. She and her two
+                    remaining kids traveled all over to find something or someone that would help them. One day a
+                    nice woman seen them and said she would help them. <br><br>
+                    She took them to her house and brought them in. It turns out she only tried to help the kids. She
+                    called Children Services and took her children from her. She fought hard and strong to stop them.
+                    The kids and her screams could be heard from down the street. <br><br>
+                    They also took Cara to jail for negligence. She rotted in her jail cell for two months. Soon she got
+                    sick. She knew it was bad but didn't want to tell the prison nurse. She knew they would help her,
+                    and she wanted to die. Soon afterwards she got too sick to move, or be helped. <br><br>
+                    She was taken to the hospital were she spent her last few hours. The family where her kids went
+                    came to see her, her last day. They all stood by her bed as her timer ticked down. She hugged her
+                    kids one last time and told them how much she loved them. Then she died. With a smile on her
+                    face.
+                </p>
+
+                <a href="/index.html"><button class="back">Home</button></a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Dark / Light Mode
+var modeIcon = document.getElementById("modeIcon");
+
+modeIcon.onclick = function() {
+    document.body.classList.toggle("dark-theme");
+    if(document.body.classList.contains("dark-theme")){
+        modeIcon.src = "day.png";
+    }
+    else{
+        modeIcon.src = "night.png";
+    }
+}
+
+    </script>
+    <script src="/pwa/installButton.js"></script>
+    <script src="/pwa/service-worker.js"></script>
+</body>
+</html>

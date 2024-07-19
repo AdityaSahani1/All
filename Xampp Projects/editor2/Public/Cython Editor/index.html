@@ -1,0 +1,129 @@
+<html>
+
+<head>
+  <title>Cython Editor</title>
+  <!-- Adding CodeMirror JS and CSS -->
+  <script src="/codemirror/lib/codemirror.js"></script>
+  <link rel="stylesheet" href="/codemirror/lib/codemirror.css">
+  <!-- Adding htmlmixed mode -->
+  <script src="/codemirror/mode/python/python.js"></script>
+  <!-- Implementing Addons -->
+  <script src="/codemirror/addon/edit/closetag.js"></script>
+  <script src="/codemirror/addon/edit/closebrackets.js"></script>
+  <script src="/codemirror/addon/selection/selection-pointer.js"></script>
+  <!-- Importing a theme -->
+  <link rel="stylesheet" href="/codemirror/theme/dracula.css">
+  <!-- Styesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="code-container">
+    <div class="code">
+      <div class="code-header">
+        <!-- Copy button -->
+        <button class="copy-button" onclick="copyCode()">Copy</button>
+        <!-- Run button -->
+        <button class="run-code" id="runButton">Run</button>
+      </div>
+
+<!-- Code input area -->
+<textarea id="editor">
+import numpy as np
+cimport cython
+from libc.math cimport sqrt
+
+@cython.boundscheck(False)
+@cython.wraparound(False)
+def pairwise_cython(double[:, ::1] X):
+    cdef int M = X.shape[0]
+    cdef int N = X.shape[1]
+    cdef double tmp, d
+    cdef double[:, ::1] D = np.empty((M, M), dtype=np.float64)
+    for i in range(M):
+        for j in range(M):
+            d = 0.0
+            for k in range(N):
+                tmp = X[i, k] - X[j, k]
+                d += tmp * tmp
+            D[i, j] = sqrt(d)
+    return np.asarray(D)  
+</textarea>
+    </div>
+    <!-- Explaination -->
+    <div class="other-editors">
+      <b>Try More Editors: -</b>
+      <a href="/Public/HTML_CSS_JS Editor/index.html">HTML/CSS/JS</a>
+      <a href="/Public/Python Editor/index.html">Python</a>
+      <a href="/Public/Cython Editor/index.html">Cython</a>
+      <a href="/Public/Javascript/index.html">Javascript</a>
+      <a href="/Public/Typescript/index.html">Typecript</a>
+      <a href="/Public/JSON-LD/index.html">JSON - LD</a>
+      <div id="other-editors"></div>
+    </div>
+  </div>
+  <div class="output">
+    <b>Output: -</b>
+    <div id="output"></div>
+  </div>
+
+  <!-- JavaScript to handle running and copying code -->
+  <script>
+   CodeMirror.fromTextArea(document.getElementById("editor"), {
+        mode: {name: "text/x-cython",
+               version: 2,
+               singleLineStringErrors: false},
+        lineNumbers: true,
+        indentUnit: 4,
+        matchBrackets: true,
+        theme: "dracula",
+      });
+
+    const runButton = document.getElementById("runButton");
+    const outputArea = document.getElementById("output");
+
+    // Run button click event
+    runButton.addEventListener("click", () => {
+      try {
+        const code = editor.getValue();
+        // Create an iframe to execute the code
+        const iframe = document.createElement("iframe");
+        outputArea.innerHTML = "";
+        outputArea.appendChild(iframe);
+
+        // Write the code into the iframe
+        iframe.contentDocument.open();
+        iframe.contentDocument.write(code);
+        iframe.contentDocument.close();
+      } catch (error) {
+        outputArea.innerHTML = "Error: " + error.message;
+      }
+    });
+
+    // Copy button
+    function copyCode() {
+      // Create a temporary textarea element to hold the code text
+      const textArea = document.createElement('textarea');
+      textArea.value = editor.getValue();
+
+      // Append the textarea to the document
+      document.body.appendChild(textArea);
+
+      // Select the text inside the textarea
+      textArea.select();
+
+      try {
+        // Execute the copy command
+        document.execCommand('copy');
+      } catch (err) {
+        console.error('Unable to copy code: ', err);
+      } finally {
+        //Remove the temporary textarea
+        document.body.removeChild(textArea);
+      }
+    }
+
+  </script>
+</body>
+
+</html>

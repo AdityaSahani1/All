@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Site Description">
+        <meta name="Author" content="Otaku #name">
+        <title> story </title>
+    
+        <!-- Including Meta tags for PWA -->
+        <link rel="manifest" href="/pwa/manifest.json">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+        <!-- (B) ICONS & PLATFORM SPECIFIC -->
+        <!-- (B1) GOOD OLD FAVICON -->
+        <link rel="icon" href="/pwa/icon/logo.png" type="image/png">
+    
+        <!-- (B2) ANDROID/CHROME -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="white">
+    
+        <!-- (B3) IOS APP ICON + MOBILE SAFARI -->
+        <link rel="apple-touch-icon" href="/pwa/icon/logo.png">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Hello World">
+    
+        <!-- (B4) WINDOWS -->
+        <meta name="msapplication-TileImage" content="/pwa/icon/logo.jpg">
+        <meta name="msapplication-TileColor" content="#ffffff">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@200..700&display=swap" rel="stylesheet">
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <a href="/profile card/index.html">
+            DEAR DIARY
+            </a>
+        </div>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+           </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#premium">Premium</a></li>
+            </ul>
+        </nav>
+        <button id="install-button">Install App</button>
+        <img src="/images/night.png" id="modeIcon">
+
+        <div class="menu">
+            <i class="fas fa-bars"></i>
+            <!-- <i class="fas fa-times"></i> -->
+        </div>
+    </header>
+
+
+    <div class="diary">
+        <div class="header">
+            <div class="date"> <span>04</span> May 2024</div>
+            <div class="mood">&#x1F60A</div>
+        </div>
+        <div class="scroll">
+            <div class="title">Karan ki awaz kahti hai...</div>
+            <div class="script"> 
+                <p>
+                    "Dear Diary,
+                    Today, I find myself drifting in the shadows of my own existence, engulfed in the depths of
+                    unimaginable sorrow and enduring the echoes of a traumatic past. The weight of these
+                    experiences has become an unbearable burden, leaving me feeling shattered and
+                    unrecognizable. <br><br>
+                    There was a time when innocence and joy filled my days, when laughter danced freely in the air.
+                    But that all changed one fateful night, when darkness descended upon my world, and my life took
+                    an irreversible turn. <br><br>
+                    The memories haunt me relentlessly, like ghosts that refuse to be silenced. The pain runs deep,
+                    etched into the very fabric of my being. Sleep eludes me, for nightmares and flashbacks invade
+                    my every moment, making me relive the horrors over and over again. <br><br>
+                    My heart is a battlefield, scarred and broken. Trust, once a pillar of strength, now seems like a
+                    distant dream. The trauma has stolen my sense of security, leaving behind a hollow shell unsure
+                    of its own worth. <br><br>
+                    The heaviness in my chest grows unbearable at times, suffocating my spirit. It feels as if I am
+                    trapped in a never-ending labyrinth of anguish, desperately searching for an exit that seems
+                    forever out of reach. The world around me feels detached, as if I am a spectator in my own life,
+                    lost in the depths of my pain. <br><br>
+                    I yearn for solace, for a glimmer of hope in this seemingly endless darkness. Yet, the road to
+                    healing feels treacherous and uncertain. The journey is lonely, marked by moments of despair
+                    and moments of fleeting hope. It is a battle fought behind closed doors, the invisible scars
+                    etched upon my soul. <br><br>
+                    But, within the depths of this desolation lies a flicker of resilience. It is the spark that refuses to
+                    be extinguished, reminding me that even in the darkest of times, there is a strength buried deep
+                    within. I hold on to that flicker, for it is my lifeline in this journey towards healing. <br><br>
+                    Though the wounds may never fully heal, I am determined to find fragments of light amidst the
+                    darkness. I seek out therapy and support, reaching out to those who understand the depths of
+                    pain that I endure. Through the process, I begin to unravel the layers of sorrow, slowly navigating
+                    my way towards a path of self-discovery and growth. <br><br>
+                    Every day is a battle, but I am a warrior, resilient and brave. I will not let the trauma define me;
+                    instead, I will rise above it. In the midst of this profound sadness, there is a glimmer of hope that
+                    one day, I will find peace and reclaim my life. <br><br>
+                    Dear Diary, I pour my heart out onto these pages, allowing my emotions to flow freely. Through
+                    these words, I find solace, understanding that I am not alone in my pain. Together, we will heal,
+                    piece by broken piece, and find the strength to face the world once again. <br><br>
+                    With unwavering determination, <br>
+                    Karan,
+                </p>
+
+                <a href="/index.html"><button class="back">Home</button></a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Dark / Light Mode
+var modeIcon = document.getElementById("modeIcon");
+
+modeIcon.onclick = function() {
+    document.body.classList.toggle("dark-theme");
+    if(document.body.classList.contains("dark-theme")){
+        modeIcon.src = "day.png";
+    }
+    else{
+        modeIcon.src = "night.png";
+    }
+}
+
+    </script>
+    <script src="/pwa/installButton.js"></script>
+    <script src="/pwa/service-worker.js"></script>
+</body>
+</html>

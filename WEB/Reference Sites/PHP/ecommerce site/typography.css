@@ -1,0 +1,81 @@
+.copyright {
+	display: none;
+	}
+* {
+	font-size: 100%;
+	font-weight: inherit;
+	}
+body {
+	font-size: .75em;
+	font-family: arial, verdana, sans-serif;
+	
+	}
+fieldset input {
+	font-size: 12px;
+	}
+
+ul.link-list li {
+	line-height: 13px;
+	}
+h2 {
+	font-size: 20px;
+	line-height: 24px;
+	}
+h3 {
+	font-size: 15px;
+	line-height: 18px;
+	}
+p {
+	font-size: 12px;
+	}
+.view {
+	font-size: 11px;
+	line-height: 18px;
+	}
+form fieldset span {
+	line-height: 22px;
+	}
+	form fieldset span input {
+		line-height: 22px;
+		}
+#shopping {
+	font-size: 11px;
+	line-height: 13px;
+	}
+	#shopping h2 {
+		font-size: 11px;
+		line-height: 33px;
+		}
+	#account-links li a{
+		line-height: 33px;
+		}
+	#shopping #bag {
+		line-height: 33px;
+		}
+.search form { 
+	line-height: 20px;
+	}
+.promotion {
+	font-size: 13px;
+	}
+
+#featured ul li a:link,
+#featured ul li a:visited,
+#featured ul li a:hover,
+#featured ul li a:active {
+	font-size: 12px;
+	line-height: 37px;
+	}
+	#brands ul li {
+		line-height: 40px;
+		}
+	#email-list p {
+		line-height: 22px;
+		font-size: 11px;
+		}
+#footer {
+	font-size: 11px;
+	}
+	#legal p {
+		font-size: 10px;
+		}

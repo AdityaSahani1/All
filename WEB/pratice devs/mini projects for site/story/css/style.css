@@ -1,0 +1,243 @@
+:root {
+    --primary-color: #ededede0;
+    --secondary-color: #2b2b2b;
+    --tertiary-color: #000000c7;
+}
+.dark-theme {
+    --primary-color: #373737f7;
+    --secondary-color: #ffffff;
+    --tertiary-color: #fcfcfc;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--primary-color);
+}
+/* Header Styles */
+header {
+    background-color: var(--primary-color);
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    margin-left: 30px; /* Adjust margin as needed */
+}
+
+.logo a {
+    font-size: 28px;
+    font-weight: bold;
+    font-family: "Bebas Neue", "Oswald", sans-serif;
+    border-bottom: 3px solid var(--secondary-color);
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+/* Search Styles */
+.search-container {
+    display: flex;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.search-input {
+    width: auto;
+    color: var(--secondary-color);
+    background: transparent;
+    font-family: inherit;
+    font-size: 22px;
+    border: none;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: var(--secondary-color);
+}
+
+.search-btn {
+    width: 30px;
+    padding: 4px 10px 4px 20px;
+    background: transparent;
+    border: none;
+    border-left: 1px solid var(--tertiary-color);
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.search-btn i {
+    scale: 1.2;
+    color: var(--secondary-color);
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Adjust gap between links as needed */
+}
+
+nav a {
+    font-size: 25px;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: bold;
+    position: relative; /* Position for the pseudo-element */
+    top: 7px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff9800; /* Hover color */
+}
+
+nav a:before {
+    content: "";
+    position: absolute;
+    bottom: -3px; /* Adjust position of the Line */
+    left: 0;
+    width: 100%;
+    height: 2px; /*Height of the underline */
+    background-color: #ff9800; /* Color of the underline */
+    transform: scaleX(0); /* Initial scale of the right */
+    transform-origin: right; /* Expand from the right */
+    transition: transform 0.3s ease-in-out;
+}
+
+nav a:hover::before {
+    transform: scaleX(1); /* Expand the line to full width */
+    transform-origin: left; /* Expand from the left */
+}
+
+/* PWA Install button */
+#install-button {
+    display: none;
+    background-color: #febbbb;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Arial", sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#install-button:hover {
+    background-color: #e65100;
+}
+
+/* Dark / Light Mode */
+#modeIcon {
+    width: 50px;
+    cursor: pointer;
+    position: relative;
+    right: 2%;
+}
+
+.menu {
+    display: none;
+    position: relative;
+    right: 4%;
+    color: var(--secondary-color);
+}
+
+/* Temporary Style for Scripts */
+.scripts-container {
+    width: 100%;
+}
+.script-box {
+    width: 60%;
+    position: absolute;
+    top: 10%;
+    background: #000;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 12px;
+    background: var(--primary-color);
+}
+.scripts {
+    height: 7vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    background: #febbbb;
+}
+.scripts a.title {
+    font-size: 23px;
+    color: #000;
+    overflow: hidden;
+    width: 75%;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    top: 3px;
+}
+.scripts button {
+    padding: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 12px;
+    background-color: var(--primary-color);
+}
+
+
+@media (max-width: 1024px)  {
+    .logo a, .search-input, img#modeIcon{
+        width: 30px;
+        font-size: 15px;
+    }
+
+    .search-input {
+        width: 200px;
+    }
+    .search-container{
+        padding: 1px 10px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    #install-button {
+        height: 23px;
+        width: auto;
+        border-radius: 6px;
+        font-size: 15px;
+        padding: 1px 10px 1px 10px;
+    }
+    .menu {
+        display: block;
+        margin-left: 15px;
+    }
+
+    .script-box {
+        width: 90%;
+    }
+}
+
+@media (max-width: 512px)  {
+    .search-input {
+        width: 100px;
+    }
+}

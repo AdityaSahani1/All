@@ -1,0 +1,218 @@
+<html>
+
+<head>
+  <title>Python Editor</title>
+  <!-- Adding CodeMirror JS and CSS -->
+  <script src="/codemirror/lib/codemirror.js"></script>
+  <link rel="stylesheet" href="/codemirror/lib/codemirror.css">
+  <!-- Adding htmlmixed mode -->
+  <script src="/codemirror/mode/python/python.js"></script>
+  <!-- Implementing Addons -->
+  <script src="/codemirror/addon/edit/closetag.js"></script>
+  <script src="/codemirror/addon/edit/closebrackets.js"></script>
+  <script src="/codemirror/addon/selection/selection-pointer.js"></script>
+  <!-- Importing a theme -->
+  <link rel="stylesheet" href="/codemirror/theme/dracula.css">
+  <!-- Styesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="code-container">
+    <div class="code">
+      <div class="code-header">
+        <!-- Copy button -->
+        <button class="copy-button" onclick="copyCode()">Copy</button>
+        <!-- Run button -->
+        <button class="run-code" id="runButton">Run</button>
+      </div>
+
+<!-- Code input area -->
+<textarea id="editor">
+  # Literals
+  1234
+  0.0e101
+  .123
+  0b01010011100
+  0o01234567
+  0x0987654321abcdef
+  7
+  2147483647
+  3L
+  79228162514264337593543950336L
+  0x100000000L
+  79228162514264337593543950336
+  0xdeadbeef
+  3.14j
+  10.j
+  10j
+  .001j
+  1e100j
+  3.14e-10j
+  
+  
+  # String Literals
+  'For\''
+  "God\""
+  """so loved
+  the world"""
+  '''that he gave
+  his only begotten\' '''
+  'that whosoever believeth \
+  in him'
+  ''
+  
+  # Identifiers
+  __a__
+  a.b
+  a.b.c
+  
+  #Unicode identifiers on Python3
+  # a = x\ddot
+  a⃗ = ẍ
+  # a = v\dot
+  a⃗ = v̇
+  
+  #F\vec = m \cdot a\vec
+  F⃗ = m•a⃗ 
+  
+  # Operators
+  + - * / % & | ^ ~ < >
+  == != <= >= <> << >> // **
+  and or not in is
+  
+  #infix matrix multiplication operator (PEP 465)
+  A @ B
+  
+  # Delimiters
+  () [] {} , : ` = ; @ .  # Note that @ and . require the proper context on Python 2.
+  += -= *= /= %= &= |= ^=
+  //= >>= <<= **=
+  
+  # Keywords
+  as assert break class continue def del elif else except
+  finally for from global if import lambda pass raise
+  return try while with yield
+  
+  # Python 2 Keywords (otherwise Identifiers)
+  exec print
+  
+  # Python 3 Keywords (otherwise Identifiers)
+  nonlocal
+  
+  # Types
+  bool classmethod complex dict enumerate float frozenset int list object
+  property reversed set slice staticmethod str super tuple type
+  
+  # Python 2 Types (otherwise Identifiers)
+  basestring buffer file long unicode xrange
+  
+  # Python 3 Types (otherwise Identifiers)
+  bytearray bytes filter map memoryview open range zip
+  
+  # Some Example code
+  import os
+  from package import ParentClass
+  
+  @nonsenseDecorator
+  def doesNothing():
+      pass
+  
+  class ExampleClass(ParentClass):
+      @staticmethod
+      def example(inputStr):
+          a = list(inputStr)
+          a.reverse()
+          return ''.join(a)
+  
+      def __init__(self, mixin = 'Hello'):
+          self.mixin = mixin
+  
+  # Python 3.6 f-strings (https://www.python.org/dev/peps/pep-0498/)
+  f'My name is {name}, my age next year is {age+1}, my anniversary is {anniversary:%A, %B %d, %Y}.'
+  f'He said his name is {name!r}.'
+  f"""He said his name is {name!r}."""
+  f'{"quoted string"}'
+  f'{{ {4*10} }}'
+  f'This is an error }'
+  f'This is ok }}'
+  fr'x={4*10}\n'
+</textarea>
+    </div>
+    <!-- Explaination -->
+    <div class="other-editors">
+      <b>Try More Editors: -</b>
+      <a href="/Public/HTML_CSS_JS Editor/index.html">HTML/CSS/JS</a>
+      <a href="/Public/Python Editor/index.html">Python</a>
+      <a href="/Public/Cython Editor/index.html">Cython</a>
+      <a href="/Public/Javascript/index.html">Javascript</a>
+      <a href="/Public/Typescript/index.html">Typecript</a>
+      <a href="/Public/JSON-LD/index.html">JSON - LD</a>
+      <div id="other-editors"></div>
+    </div>
+  </div>
+  <div class="output">
+    <b>Output: -</b>
+    <div id="output"></div>
+  </div>
+
+  <!-- JavaScript to handle running and copying code -->
+  <script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+        mode: {name: "python",
+               version: 3,
+               singleLineStringErrors: false},
+        lineNumbers: true,
+        indentUnit: 4,
+        matchBrackets: true,
+        theme: "dracula",
+    });
+
+    const runButton = document.getElementById("runButton");
+    const outputArea = document.getElementById("output");
+
+    // Run button click event
+    runButton.addEventListener("click", () => {
+      try {
+        const code = editor.getValue();
+        // Create an iframe to execute the code
+        const iframe = document.createElement("iframe");
+        outputArea.innerHTML = "";
+        outputArea.appendChild(iframe);
+
+        // Write the code into the iframe
+        iframe.contentDocument.open();
+        iframe.contentDocument.write(code);
+        iframe.contentDocument.close();
+      } catch (error) {
+        outputArea.innerHTML = "Error: " + error.message;
+      }
+    });
+
+    // Copy button
+    function copyCode() {
+      // Create a temporary textarea element to hold the code text
+      const textArea = document.createElement('textarea');
+      textArea.value = editor.getValue();
+
+      // Append the textarea to the document
+      document.body.appendChild(textArea);
+
+      // Select the text inside the textarea
+      textArea.select();
+
+      try {
+        // Execute the copy command
+        document.execCommand('copy');
+      } catch (err) {
+        console.error('Unable to copy code: ', err);
+      } finally {
+        //Remove the temporary textarea
+        document.body.removeChild(textArea);
+      }
+    }
+
+  </script>
+</body>
+
+</html>

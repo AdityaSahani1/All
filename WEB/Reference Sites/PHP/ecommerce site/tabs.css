@@ -1,0 +1,124 @@
+/*  
+ * sliding doors start
+ */
+.sliding-doors
+{
+margin-bottom:10px;
+background:transparent url(/images/backgrounds/tab-container.gif) repeat-x 0 29px;
+}
+#category-container .sliding-doors
+{
+margin-bottom:0;
+width:724px;
+}
+#accessories .right-column .tabs-panel
+{
+width:724px;
+}
+
+.right-column .tabs-panel
+{
+width:auto;
+}
+.tabs-panel
+{
+width:724px;
+}
+#product-detail .tabs-panel .inner
+{
+margin-top:0;
+width:auto;
+padding-top:0;
+}
+.large-doors
+{
+background:transparent url(/images/backgrounds/large-tab-container.gif) no-repeat bottom right;
+}
+.sliding-doors a
+{
+font-size:13px;
+font-weight:bold;
+display:block;
+background:url(/images/tabs/left.gif) no-repeat left top;
+padding:5px 9px;
+height:32px;
+}
+.sliding-doors a.large
+{
+background:url(/images/tabs/large-left.gif) no-repeat left top;
+height:42px;
+}
+.sliding-doors li
+{
+margin-right:3px;
+height:33px;
+line-height: 20px;
+background:url(/images/tabs/right.gif) no-repeat right top;
+}
+.sliding-doors li.large
+{
+margin-right:3px;
+height:43px;
+background:url(/images/tabs/large-right.gif) no-repeat right top;
+}
+.sliding-doors li span
+{
+display:block;
+font-size:11px;
+line-height: 11px;
+}
+.sliding-doors li.last
+{
+margin-right:0;
+}
+.sliding-doors .current,
+.sliding-doors .active
+{
+line-height: 20px;
+height:32px;
+background:url(/images/tabs/right-current.gif) no-repeat right top;
+}
+.sliding-doors .large-current,
+.large-doors .active {
+    height:42px !important;
+    background:url(/images/tabs/large-right-current.gif) no-repeat right top !important;
+    }
+.sliding-doors .current a,
+.sliding-doors .active a
+{
+height:31px;
+color:#fff;
+background:url(/images/tabs/left-current.gif) no-repeat left top;
+text-decoration: none;
+cursor: default;
+}
+.sliding-doors .large-current a,
+.large-doors .active a
+{
+height:31px;
+color:#fff;
+background:url(/images/tabs/large-left-current.gif) no-repeat left top;
+}
+.tabs-panel .view-all
+{
+margin-right:20px;
+height:29px;
+line-height:29px;
+text-align:right;
+}
+.tabs-panel .inner
+{
+margin: 0;
+color:#666;
+}
+.tabs-panel h4
+{
+font-size:14px;
+}
+#product-detail .tabs-panel h4
+{
+font-size:18px;
+}
+/*
+* sliding doors start end
+*/

@@ -1,0 +1,62 @@
+/* Style the container */
+.code-container {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Styles for the code header */
+.code-header {
+    display:flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: #e0e0e0;
+}
+
+/* Style the code block on the left */
+.code {
+    flex: 1;
+    border-radius: 10px 0 0 10px;
+    overflow: auto;
+    position: relative;
+} 
+
+/* Styles for the copy button */
+.copy-button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+/* Styles for the Run button */
+.run-code {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Add hover effect for the copy button and run button */
+.copy-button:hover {
+    background-color: #0056b3;
+}
+
+.run-code:hover {
+    background-color: #d7d2d2;
+    color: #000000;
+}
+
+/* Styles the output on the right */
+.other-editors {
+    flex: 1;
+    padding: 10px;
+    padding-left: 20px;
+    background-color: #f9ecec;
+    border-radius: 0 10px 10px 0;
+}

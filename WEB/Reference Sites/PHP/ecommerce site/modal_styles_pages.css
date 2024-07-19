@@ -1,0 +1,7 @@
+a.continueToPayless:link, a.continueToPayless:visited, a.continueToPayless:hover, a.continueToPayless:active {
+background:transparent url(/safeTstep/images/button-sprite.gif) no-repeat scroll -260px -44px;
+display:inline-block;
+height:35px;
+text-indent:-9999em;
+width:188px;
+}
